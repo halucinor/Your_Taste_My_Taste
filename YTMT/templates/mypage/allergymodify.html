@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href={% static "YTMT/css/allergy.css" %}>
   </head>
-   
+
     <center>
       <br>
       <span style="font-weight: bold; font-size: 2em; line-height: 2em; color: black; font-family: 'Nanum Gothic';">알레르기 </span>
@@ -43,13 +43,13 @@
      <table id="addTable" cellspacing="0" cellpadding="0" bgcolor="#FFFFFF" border="0">
     </table></td>
   </tr>
-  <div class = "allergy_container">  
+  <div class = "allergy_container">
   {% for allergy in allergy_list %}
    <span class="m-1 badge badge-danger">
     <span class= "allergy">{{ allergy.ingre}}</span><span class = "remove" style="cursor:pointer"> X</span></span>
-  {% endfor %}    
+  {% endfor %}
   </div>
-  
+
 </div>
 <input type="button" id="submit_btn" onClick="submit_form()" class="btn btn-pink w200" style="font-weight:bold;background-color: #fd7e14;width:250pt;margin-top:12px;"value="수정완료">
 
@@ -57,7 +57,7 @@
   <span class="m-1 badge badge-danger d-none">
     <span class= "allergy"></span><span class = "remove" style="cursor:pointer"> X </span></span>
 </center>
- 
+
   <script type="text/javascript">
 
 
@@ -87,7 +87,7 @@
               }
           }
         }
-        
+
         find_bdge = $(".badge-danger.d-none").clone()
         $(find_bdge).removeClass("d-none")
         $(find_bdge).find(".allergy").html($('#searchbox').val())
@@ -95,12 +95,12 @@
 
         $("#searchbox").val("");
     }
-    
+
     $(document).on("click", ".remove", function(event) {
       var parentTag = $(this).closest(".badge")
       parentTag.remove()
     });
-    
+
     function submit_form(){
       var allergy_list = []
         $(".allergy").each(function(index,elements){
